@@ -1,20 +1,16 @@
 # corpdash-chromium
 
-Chromium **chrome-headless-shell** для чекера CorpDash (Playwright, закрытая сеть).
+Готовые бинарники для чекера CorpDash (Playwright в закрытой сети). Оба — свободно распространяемые.
 
-- Сборка: Chrome for Testing **153.0.8010.12** = playwright chromium **v1243**, linux/amd64
-- Источник: https://storage.googleapis.com/chrome-for-testing-public/153.0.8010.12/linux64/chrome-headless-shell-linux64.zip
-- Файл порезан на куски <100 МБ (лимит github). Склейка:
-
+## chrome-headless-shell-linux64.tar.xz
+Chrome for Testing **153.0.8010.12** = playwright chromium **v1243**, linux/amd64 (целым файлом).
 ```bash
-cat chrome-headless-shell-linux64.zip.part-* > chs.zip
-unzip -q chs.zip           # -> chrome-headless-shell-linux64/chrome-headless-shell
+python3 -c "import tarfile; tarfile.open('chrome-headless-shell-linux64.tar.xz','r:xz').extractall('/opt')"
+chmod +x /opt/chrome-headless-shell-linux64/chrome-headless-shell
 ```
 
-sha256 (склеенного zip): a9da028861a0cf789ff25c2fed45f5f1aaf969ed9247835b6a7821a4f7af9d1d
-
 ## node-linux-x64.tar.xz
-Node.js **v22.23.3** linux-x64 (для vite 8, требует node>=20.19). Распаковка:
+Node.js **v22.23.3** linux-x64 (vite 8 требует node>=20.19).
 ```bash
 python3 -c "import tarfile; tarfile.open('node-linux-x64.tar.xz','r:xz').extractall('/opt')"
 export PATH=/opt/node-v22.23.3-linux-x64/bin:$PATH
