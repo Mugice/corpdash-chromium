@@ -12,3 +12,10 @@ unzip -q chs.zip           # -> chrome-headless-shell-linux64/chrome-headless-sh
 ```
 
 sha256 (склеенного zip): a9da028861a0cf789ff25c2fed45f5f1aaf969ed9247835b6a7821a4f7af9d1d
+
+## node-linux-x64.tar.xz
+Node.js **v22.23.3** linux-x64 (для vite 8, требует node>=20.19). Распаковка:
+```bash
+python3 -c "import tarfile; tarfile.open('node-linux-x64.tar.xz','r:xz').extractall('/opt')"
+export PATH=/opt/node-v22.23.3-linux-x64/bin:$PATH
+```
